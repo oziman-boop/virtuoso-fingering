@@ -3,5 +3,5 @@ pretty_midi
 pandas
 pyyaml
 openai
-streamlit
+streamlit>=1.32.0
 python-dotenv
