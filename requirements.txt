@@ -1,0 +1,7 @@
+numpy
+pretty_midi
+pandas
+pyyaml
+openai
+streamlit
+python-dotenv

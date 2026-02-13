@@ -1,0 +1,21 @@
+# Virtual environment
+.venv/
+
+# Environment variables
+.env
+
+# macOS
+.DS_Store
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Data (large files)
+GiantMIDI-PIano/
+data/
+
+# IDE
+.idea/
+.vscode/

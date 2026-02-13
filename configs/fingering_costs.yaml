@@ -1,0 +1,35 @@
+# ────────────────────────────────────────────────────────────────
+# Virtuoso Architect — Fingering Cost Configuration
+# ────────────────────────────────────────────────────────────────
+# All weights used by the FingeringCostModel are defined here.
+# No hardcoded constants exist in cost_model.py;
+# every value must be present in this file.
+# ────────────────────────────────────────────────────────────────
+
+# Maximum comfortable semitone span per finger pair (thumb=1 … pinky=5).
+# Used to decide whether a stretch penalty applies.
+max_comfortable_span:
+  # Pair notation: "f1_f2" → semitones
+  "1_2": 4
+  "1_3": 6
+  "1_4": 8
+  "1_5": 10
+  "2_3": 3
+  "2_4": 5
+  "2_5": 7
+  "3_4": 3
+  "3_5": 5
+  "4_5": 3
+
+# ── Cost weights ──────────────────────────────────────────────
+stretch_weight: 2.0        # penalty per semitone exceeding comfortable span
+crossing_weight: 4.0       # penalty when a higher-numbered finger goes below a lower-numbered one (or vice versa)
+repetition_weight: 5.0     # penalty for using the same finger on consecutive notes (non-repeated pitch)
+hand_switch_weight: 3.0    # penalty for switching hands between consecutive notes
+chord_penalty_weight: 1.5  # per-note penalty when a chord exceeds 5 notes (forces hand split)
+weak_finger_weight: 1.0    # extra cost for using fingers 4 or 5 (ring / pinky)
+
+# ── Hand split heuristic ──────────────────────────────────────
+# Notes at or below this MIDI pitch are "low register" → left hand default.
+# Notes above are "high register" → right hand default.
+split_pitch: 60            # Middle C (C4)
